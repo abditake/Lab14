@@ -17,7 +17,6 @@ function populateForm() {
     option.value = Product.allProducts[i].name;
     selectElement.appendChild(option);
   }
-
 }
 
 // When someone submits the form, we need to add the selected item to the cart
@@ -36,8 +35,22 @@ function handleSubmit(event) {
 
 }
 
+
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
+  
+  // event.preventDefault();
+
+  let selectedItems = document.getElementById('items').value; 
+  console.log(selectedItems);
+  
+  
+  let selectedQuanity = document.getElementById('quantity').value;
+  
+  cart.addItem(selectedItems,selectedQuanity);
+  
+  console.log(selectedItems);
+
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
